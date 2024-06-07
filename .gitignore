@@ -1,0 +1,5 @@
+# TLS files
+*.crt
+*.key
+*.csr
+*.srl
