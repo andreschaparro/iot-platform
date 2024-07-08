@@ -6,3 +6,11 @@ services:
       - "8883"
     ports:
       - "8883:8883"
+  
+  nginx:
+    build: nginx
+    container_name: nginx
+    expose:
+      - "8443"
+    ports:
+      - "8443:8443"
