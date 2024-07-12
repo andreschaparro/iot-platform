@@ -27,6 +27,22 @@ function generate_client () {
     openssl verify -CAfile ca.crt client.crt
 }
 
+function copy_to_mosquitto() {
+    mkdir ../mosquitto/certs
+    cp server.crt ../mosquitto/certs
+    cp server.key ../mosquitto/certs
+    cp ca.crt ../mosquitto/certs
+}
+
+function copy_to_nginx() {
+    mkdir ../nginx/certs
+    cp server.crt ../nginx/certs
+    cp server.key ../nginx/certs
+    cp ca.crt ../nginx/certs
+}
+
 generate_CA
 generate_server
 generate_client
+copy_to_mosquitto
+copy_to_nginx
